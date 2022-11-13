@@ -4,10 +4,6 @@ package Objects;
 import junit.framework.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 import java.util.Set;
 
 import static TestScenarios.TestMethods_googleSearchPage.Wait;
@@ -20,11 +16,10 @@ public class QAJobPage {
         this.driver = driver;
     }
 
-    By allTeam = By.xpath("//a[.='See all teams']");
-    By QA = By.xpath("//*[@id=\"career-find-our-calling\"]/div/div/div[2]/div[12]/div[1]/a");
-    By allQaJobs = By.xpath("//a[.='See all QA jobs']");
-    By filterLocation = By.id("select2-filter-by-location-container");
-    By istanbul = By.cssSelector("[title='Istanbul']");
+    By allTeam = By.xpath("//*[@id=\"career-find-our-calling\"]/div/div/a");
+    By QA = By.xpath("//*[@id=\"career-find-our-calling\"]/div/div/div[2]/div[12]/div[2]/a/h3");
+    By allQaJobs = By.xpath("//*[text()='See all QA jobs']");
+    By filterLocation = By.xpath("//*[@id=\"select2-filter-by-location-container\"]");
     By jobList = By.id("career-position-list");
     By firstJob = By.cssSelector("[id='jobs-list']>div:nth-child(1)");
     By secondJob = By.cssSelector("[id='jobs-list']>div:nth-child(2)");
@@ -33,29 +28,29 @@ public class QAJobPage {
     By firstJobLocation = By.cssSelector("[id='jobs-list']>div:nth-child(1)>div>div");
     By secondJobLocation = By.cssSelector("[id='jobs-list']>div:nth-child(2)>div>div");
     By thirdJobLocation = By.cssSelector("[id='jobs-list']>div:nth-child(3)>div>div");
-    By firstJobButton = By.xpath("//a[.='Apply Now'][1]");
-    By secondJobButton = By.xpath("//a[.='Apply Now'][2]");
-    By thirdJobButton = By.xpath("//a[.='Apply Now'][3]");
+    By  firstJobApplyButton = By.xpath("(//*[text()='Apply Now'])[1]");
+    By secondJobApplyButton = By.xpath("(//*[text()='Apply Now'])[2]");
+    By thirdJobApplyButton = By.xpath("(//*[text()='Apply Now'])[3]");
 
 
     public void clickAllTeams(){
-      Actions actions = new Actions(driver);
+        Actions actions = new Actions(driver);
 
-        for (int i = 0; i < 19; i++) {
-            actions.sendKeys(Keys.TAB).build().perform();
+        for (int i = 0; i < 4; i++) {
+            actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+            Wait(1);
         }
-        actions.sendKeys(Keys.ENTER).build().perform();
-
-
-
+        driver.findElement(allTeam).click();
     }
 
     public void clickQA() {
-        WebElement element = driver.findElement(By.xpath("//*[.='Quality Assurance']/h3"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].scrollIntoView()", element);
-        Wait(2);
-        executor.executeScript("arguments[0].click();", element);
+        Actions actions = new Actions(driver);
+
+        for (int i = 0; i < 3; i++) {
+            actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+            Wait(1);
+        }
+        driver.findElement(QA).click();
     }
 
     public void clickAllQaJobs() {
@@ -64,14 +59,20 @@ public class QAJobPage {
     }
 
     public void clickFilterLocation() {
-        Wait(2);
+        Wait(30);
+        Actions action=new Actions(driver);
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
         driver.findElement(filterLocation).click();
+
     }
 
-    public void selectIstanbul() {
-        Wait(2);
-        driver.findElement(istanbul).click();
-    }
+   public void selectIstanbul() {
+       Actions action=new Actions(driver);
+       for (int i = 0; i < 5; i++) {
+           action.sendKeys(Keys.ARROW_DOWN).build().perform();
+       }
+       action.sendKeys(Keys.ENTER).build().perform();
+   }
 
     public void checkJobList() {
         Wait(2);
@@ -79,12 +80,13 @@ public class QAJobPage {
     }
 
     public void checkPositionContainsQA() {
-        Wait(1);
-        Assert.assertTrue(driver.findElement(firstJob).getText().contains("Quality Assurance"));
-        Wait(1);
-        Assert.assertTrue(driver.findElement(secondJob).getText().contains("Quality Assurance"));
-        Wait(1);
-        Assert.assertTrue(driver.findElement(thirdJob).getText().contains("Quality Assurance"));
+   Wait(1);
+   Assert.assertTrue(driver.findElement(firstJob).getText().contains("Quality Assurance"));
+   Wait(1);
+   Assert.assertTrue(driver.findElement(secondJob).getText().contains("Quality Assurance"));
+   Wait(1);
+   Assert.assertTrue(driver.findElement(thirdJob).getText().contains("Quality Assurance"));
+
     }
 
     public void departmentCheck() {
@@ -102,21 +104,24 @@ public class QAJobPage {
     }
 
     public void checkApplyButton() {
-        Wait(1);
-        Assert.assertTrue(driver.findElement(firstJobButton).getText().contains("Apply"));
-        Wait(1);
-        Assert.assertTrue(driver.findElement(secondJobButton).getText().contains("Apply"));
-        Wait(1);
-        Assert.assertTrue(driver.findElement(thirdJobButton).getText().contains("Apply"));
+        Actions action=new Actions(driver);
+        action.sendKeys(Keys.ARROW_DOWN).build().perform();
+
+        action.moveToElement(driver.findElement(firstJob)).build().perform();
+        Assert.assertTrue(driver.findElement(firstJobApplyButton).getText().contains("Apply"));
+        action.moveToElement(driver.findElement(secondJob)).build().perform();
+        Assert.assertTrue(driver.findElement(secondJobApplyButton).getText().contains("Apply"));
+        action.moveToElement(driver.findElement(thirdJob)).build().perform();
+        Assert.assertTrue(driver.findElement(thirdJobApplyButton).getText().contains("Apply"));
     }
 
     public void clickOnApplyButton() {
         Wait(1);
-        driver.findElement(firstJobButton).click();
+        driver.findElement(firstJobApplyButton).click();
         Wait(1);
-        driver.findElement(secondJobButton).click();
+        driver.findElement(secondJobApplyButton).click();
         Wait(1);
-        driver.findElement(thirdJobButton).click();
+        driver.findElement(thirdJobApplyButton).click();
     }
 
     public void assertLeverPage() {

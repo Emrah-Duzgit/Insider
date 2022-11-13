@@ -31,8 +31,8 @@ public class TestMethods_googleSearchPage {
     public void beforeTest(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // sadece ana sayfa yüklenirken en başta
+        wait=new WebDriverWait(driver, Duration.ofSeconds(50));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(50)); // sadece ana sayfa yüklenirken en başta
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); // bütün webElement için geçerli
         //driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -62,6 +62,7 @@ public class TestMethods_googleSearchPage {
         QaJobsPage.clickAllTeams();
         QaJobsPage.clickQA();
         QaJobsPage.clickAllQaJobs();
+        QaJobsPage.clickFilterLocation();
         QaJobsPage.selectIstanbul();
         QaJobsPage.checkJobList();
     }
