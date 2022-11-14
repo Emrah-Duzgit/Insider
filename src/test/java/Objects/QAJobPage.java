@@ -36,17 +36,18 @@ public class QAJobPage {
     public void clickAllTeams(){
         Actions actions = new Actions(driver);
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             actions.sendKeys(Keys.PAGE_DOWN).build().perform();
             Wait(1);
         }
         driver.findElement(allTeam).click();
+        Wait(2);
     }
 
     public void clickQA() {
         Actions actions = new Actions(driver);
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             actions.sendKeys(Keys.PAGE_DOWN).build().perform();
             Wait(1);
         }
@@ -59,14 +60,15 @@ public class QAJobPage {
     }
 
     public void clickFilterLocation() {
-        Wait(30);
-        Actions action=new Actions(driver);
-        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        Wait(2);
+        //Actions action=new Actions(driver);
+        //action.sendKeys(Keys.PAGE_DOWN).build().perform();
         driver.findElement(filterLocation).click();
 
     }
 
    public void selectIstanbul() {
+        Wait(2);
        Actions action=new Actions(driver);
        for (int i = 0; i < 5; i++) {
            action.sendKeys(Keys.ARROW_DOWN).build().perform();
@@ -105,8 +107,9 @@ public class QAJobPage {
 
     public void checkApplyButton() {
         Actions action=new Actions(driver);
-        action.sendKeys(Keys.ARROW_DOWN).build().perform();
-
+        for (int i = 0; i < 2; i++) {
+            action.sendKeys(Keys.ARROW_DOWN).build().perform();
+        }
         action.moveToElement(driver.findElement(firstJob)).build().perform();
         Assert.assertTrue(driver.findElement(firstJobApplyButton).getText().contains("Apply"));
         action.moveToElement(driver.findElement(secondJob)).build().perform();
@@ -116,6 +119,8 @@ public class QAJobPage {
     }
 
     public void clickOnApplyButton() {
+        Actions action=new Actions(driver);
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
         Wait(1);
         driver.findElement(firstJobApplyButton).click();
         Wait(1);
