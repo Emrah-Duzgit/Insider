@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f4400f7-b8e4-454c-b89c-0930edd27842" name="Changes" comment="">
+    <list default="true" id="5f4400f7-b8e4-454c-b89c-0930edd27842" name="Changes" comment="Insider">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Utils/GeneralWebDriver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/XML/BrowserParam.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Objects/QAJobPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Objects/QAJobPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Objects/careersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Objects/careersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestScenarios/TestMethods_googleSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestScenarios/InsiderTestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Objects/QAJobPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Objects/QAJobPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Utilities/GWD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Objects/careersPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Objects/careersPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestScenarios/TestMethods_googleSearchPage.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,37 +39,93 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Emrah Düzgit/IdeaProjects/Insider/src/test/java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15527344&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Emrah Düzgit/IdeaProjects/Insider/src/test/java/XML",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15527344",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Emrah Düzgit\IdeaProjects\Insider\src\test\java\XML" />
       <recent name="C:\Users\Emrah Düzgit\IdeaProjects\Insider\src\test\java" />
       <recent name="C:\Users\Emrah Düzgit\IdeaProjects\Insider" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Runners" />
       <recent name="Pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestMethods_googleSearchPage">
-    <configuration name="Insider.NavigateToWebSiteAndVerify" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.C:/Users/Emrah Düzgit/IdeaProjects/Insider/src/test/java/XML/BrowserParam.xml">
+    <configuration name="C:/Users/Emrah Düzgit/IdeaProjects/Insider/src/test/java/XML/BrowserParam.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Insider" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/XML/BrowserParam.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/Emrah Düzgit/IdeaProjects/Insider/src/test/java/XML/ParallelTesting_ExtentReport.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Insider" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/XML/ParallelTesting_ExtentReport.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InsiderTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Insider" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="TestCases.*" />
+          <option name="PATTERN" value="TestScenarios.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Insider" />
-      <option name="METHOD_NAME" value="NavigateToWebSiteAndVerify" />
+      <option name="PACKAGE_NAME" value="TestScenarios" />
+      <option name="MAIN_CLASS_NAME" value="TestScenarios.InsiderTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InsiderTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Insider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestScenarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestScenarios" />
+      <option name="MAIN_CLASS_NAME" value="TestScenarios.InsiderTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InsiderTestCase.VerifyandAccessFacebook" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Insider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestScenarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestScenarios" />
+      <option name="MAIN_CLASS_NAME" value="TestScenarios.InsiderTestCase" />
+      <option name="METHOD_NAME" value="VerifyandAccessFacebook" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -89,67 +150,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMethods_googleSearchPage.VerifyandAccessFacebook" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Insider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestScenarios.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestScenarios" />
-      <option name="MAIN_CLASS_NAME" value="TestScenarios.TestMethods_googleSearchPage" />
-      <option name="METHOD_NAME" value="VerifyandAccessFacebook" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMethods_googleSearchPage.searchOperations (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Insider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestScenarios.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestScenarios" />
-      <option name="MAIN_CLASS_NAME" value="TestScenarios.TestMethods_googleSearchPage" />
-      <option name="METHOD_NAME" value="searchOperations" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMethods_googleSearchPage.searchOperations" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Insider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestScenarios.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestScenarios" />
-      <option name="MAIN_CLASS_NAME" value="TestScenarios.TestMethods_googleSearchPage" />
-      <option name="METHOD_NAME" value="searchOperations" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestMethods_googleSearchPage" />
-        <item itemvalue="TestNG.TestMethods_googleSearchPage.VerifyandAccessFacebook" />
-        <item itemvalue="TestNG.TestMethods_googleSearchPage.searchOperations (1)" />
-        <item itemvalue="TestNG.TestMethods_googleSearchPage.searchOperations" />
-        <item itemvalue="TestNG.Insider.NavigateToWebSiteAndVerify" />
+        <item itemvalue="TestNG.C:/Users/Emrah Düzgit/IdeaProjects/Insider/src/test/java/XML/BrowserParam.xml" />
+        <item itemvalue="TestNG.InsiderTestCase" />
+        <item itemvalue="TestNG.C:/Users/Emrah Düzgit/IdeaProjects/Insider/src/test/java/XML/ParallelTesting_ExtentReport.xml" />
+        <item itemvalue="TestNG.InsiderTestCase" />
+        <item itemvalue="TestNG.InsiderTestCase.VerifyandAccessFacebook" />
       </list>
     </recent_temporary>
   </component>

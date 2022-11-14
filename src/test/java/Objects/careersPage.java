@@ -1,10 +1,10 @@
 package Objects;
 
-
 import junit.framework.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import static TestScenarios.TestMethods_googleSearchPage.Wait;
+
+import static Utils.GeneralWebDriver.Wait;
 
 public class careersPage {
 

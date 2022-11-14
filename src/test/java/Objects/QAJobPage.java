@@ -1,12 +1,22 @@
 package Objects;
 
 
+import Utils.GeneralWebDriver;
+import com.aventstack.extentreports.gherkin.model.Scenario;
+import com.aventstack.extentreports.service.ExtentTestManager;
 import junit.framework.Assert;
+import org.apache.commons.io.FileUtils;
+import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
-import static TestScenarios.TestMethods_googleSearchPage.Wait;
+import static Utils.GeneralWebDriver.Wait;
 
 
 public class QAJobPage {
@@ -28,12 +38,12 @@ public class QAJobPage {
     By firstJobLocation = By.cssSelector("[id='jobs-list']>div:nth-child(1)>div>div");
     By secondJobLocation = By.cssSelector("[id='jobs-list']>div:nth-child(2)>div>div");
     By thirdJobLocation = By.cssSelector("[id='jobs-list']>div:nth-child(3)>div>div");
-    By  firstJobApplyButton = By.xpath("(//*[text()='Apply Now'])[1]");
+    By firstJobApplyButton = By.xpath("(//*[text()='Apply Now'])[1]");
     By secondJobApplyButton = By.xpath("(//*[text()='Apply Now'])[2]");
     By thirdJobApplyButton = By.xpath("(//*[text()='Apply Now'])[3]");
 
 
-    public void clickAllTeams(){
+    public void clickAllTeams() {
         Actions actions = new Actions(driver);
 
         for (int i = 0; i < 3; i++) {
@@ -67,14 +77,14 @@ public class QAJobPage {
 
     }
 
-   public void selectIstanbul() {
+    public void selectIstanbul() {
         Wait(2);
-       Actions action=new Actions(driver);
-       for (int i = 0; i < 5; i++) {
-           action.sendKeys(Keys.ARROW_DOWN).build().perform();
-       }
-       action.sendKeys(Keys.ENTER).build().perform();
-   }
+        Actions action = new Actions(driver);
+        for (int i = 0; i < 5; i++) {
+            action.sendKeys(Keys.ARROW_DOWN).build().perform();
+        }
+        action.sendKeys(Keys.ENTER).build().perform();
+    }
 
     public void checkJobList() {
         Wait(2);
@@ -82,12 +92,12 @@ public class QAJobPage {
     }
 
     public void checkPositionContainsQA() {
-   Wait(1);
-   Assert.assertTrue(driver.findElement(firstJob).getText().contains("Quality Assurance"));
-   Wait(1);
-   Assert.assertTrue(driver.findElement(secondJob).getText().contains("Quality Assurance"));
-   Wait(1);
-   Assert.assertTrue(driver.findElement(thirdJob).getText().contains("Quality Assurance"));
+        Wait(1);
+        Assert.assertTrue(driver.findElement(firstJob).getText().contains("Quality Assurance"));
+        Wait(1);
+        Assert.assertTrue(driver.findElement(secondJob).getText().contains("Quality Assurance"));
+        Wait(1);
+        Assert.assertTrue(driver.findElement(thirdJob).getText().contains("Quality Assurance"));
 
     }
 
@@ -106,7 +116,7 @@ public class QAJobPage {
     }
 
     public void checkApplyButton() {
-        Actions action=new Actions(driver);
+        Actions action = new Actions(driver);
         for (int i = 0; i < 2; i++) {
             action.sendKeys(Keys.ARROW_DOWN).build().perform();
         }
@@ -119,7 +129,7 @@ public class QAJobPage {
     }
 
     public void clickOnApplyButton() {
-        Actions action=new Actions(driver);
+        Actions action = new Actions(driver);
         action.sendKeys(Keys.PAGE_DOWN).build().perform();
         Wait(1);
         driver.findElement(firstJobApplyButton).click();
@@ -141,4 +151,19 @@ public class QAJobPage {
             driver.close();
         }
     }
+
+    public void takeScreenShot() {
+
+        TakesScreenshot ts = (TakesScreenshot) driver; // 1.Aşama ekran görünütüsü alma değişkenini tanımladım
+        File hafizadakiHali = ts.getScreenshotAs(OutputType.FILE);  // 2.Aşama Saklama tipi seçildi (Dosya), data(Veritabanı) (Byte)
+
+        try {
+            FileUtils.copyFile(hafizadakiHali, new File("target/FailedScreenShots/failed.png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 }
+
